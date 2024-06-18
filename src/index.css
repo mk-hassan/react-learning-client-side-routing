@@ -125,8 +125,8 @@ section.about-content p {
   }
 }
 
-/* help layout */
-section.help-header .help-options {
+/* help */
+section.help .help-options {
   display: flex;
   gap: 3rem;
   justify-content: center;
@@ -158,7 +158,7 @@ section.help-content h3 {
 
   & p:first-of-type {
     font-size: 2.5rem;
-    transition: color 1s;
+    transition: color 0.5s;
     margin-bottom: 1rem;
   }
 
@@ -201,7 +201,24 @@ section.help-content h3 {
 }
 
 /* careers list */
+section.careers-contnet .career-card {
+  border-radius: var(--border-raduis);
+  padding: 2rem;
+  background-color: rgb(0 0 0 / 0.2);
 
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  & h3 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  &:hover h3 {
+    color: var(--clr-primary-hsl);
+  }
+}
 
 /* careers details */
 

@@ -12,6 +12,7 @@ import About from './pages/About.jsx'
 import FAQ from './components/FAQ.jsx'
 import Contact from './components/Contact.jsx'
 import NotFound from './pages/NotFound.jsx'
+import Careers, { loadCareers } from './pages/Careers.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,11 @@ const router = createBrowserRouter(
         <Route path='faq' element={<FAQ />} />
         <Route path='contact' element={<Contact />} />
       </Route>
+      <Route
+        path='careers'
+        element={<Careers />}
+        loader={loadCareers}
+      />
       <Route path='*' element={<NotFound />} />
     </Route>
   )

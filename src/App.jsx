@@ -14,6 +14,7 @@ function App() {
           <ul className='links horizontal'>
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='about'>About</NavLink></li>
+            <li><NavLink to='careers'>Careers</NavLink></li>
             <li><NavLink to='help'>Help</NavLink></li>
           </ul>
         </div>
