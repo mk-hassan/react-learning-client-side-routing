@@ -19,6 +19,7 @@ body {
   --border-raduis: 1rem;
   --nav-links-border: 2px solid var(--clr-primary-hsl);
 
+  position: relative;
   color: white;
   font-size: 1.5rem;
   line-height: 1.6;
@@ -163,6 +164,25 @@ section.help-content h3 {
     outline: none;
     padding: 0.5rem 1rem;
     border-radius: var(--border-raduis);
+  }
+}
+
+/* Error page */
+.not-found {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  & .error-message span {
+    font-size: 5rem;
+    color: var(--clr-primary-hsl);
+  }
+
+  & a {
+    text-decoration: underline;
+    color: var(--clr-primary-hsl);
   }
 }
 

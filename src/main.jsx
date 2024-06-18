@@ -11,6 +11,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import FAQ from './components/FAQ.jsx'
 import Contact from './components/Contact.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
         <Route path='faq' element={<FAQ />} />
         <Route path='contact' element={<Contact />} />
       </Route>
+      <Route path='*' element={<NotFound />} />
     </Route>
   )
 );
