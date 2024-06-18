@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Route, Routes, Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 
 // pages
 import Home from './pages/Home'
@@ -22,10 +22,7 @@ function App() {
         </div>
       </nav>
       <main>
-        <Routes>
-          <Route index element={<Home />} /> {/* index == path='/' */}
-          <Route path='about' element={<About />} />
-        </Routes>
+        <Outlet />
       </main>
     </>
   );
