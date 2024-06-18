@@ -12,12 +12,9 @@ function App() {
         <div className="container">
           <h1 className='logo'><Link to="/">Job Seeker</Link></h1>
           <ul className='links horizontal'>
-            <li>
-              <NavLink to='/'>Home</NavLink>
-            </li>
-            <li>
-              <NavLink to='about'>About</NavLink>
-            </li>
+            <li><NavLink to='/'>Home</NavLink></li>
+            <li><NavLink to='about'>About</NavLink></li>
+            <li><NavLink to='help'>Help</NavLink></li>
           </ul>
         </div>
       </nav>

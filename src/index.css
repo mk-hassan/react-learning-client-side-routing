@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
-  --clr-primary: #bc4123;
-  --clr-secondary: #2b3452;
+  --clr-primary: 12 69% 44%;
+  --clr-secondary: 226 31% 25%;
+
+  --clr-primary-hsl: hsl(var(--clr-primary));
+  --clr-secondary-hsl: hsl(var(--clr-secondary));
 
   --main-font-family: "Popins" sans-serif;
 }
@@ -13,12 +16,16 @@ html {
 }
 
 body {
+  --border-raduis: 1rem;
+  --nav-links-border: 2px solid var(--clr-primary-hsl);
+
   color: white;
   font-size: 1.5rem;
+  line-height: 1.6;
   font-weight: 500;
   min-height: 100vh;
   font-family: var(--main-font-family);
-  background: var(--clr-secondary);
+  background: var(--clr-secondary-hsl);
 }
 
 *,
@@ -46,28 +53,32 @@ a {
   text-decoration: none;
 }
 
-p {
-  margin: 20px 0;
+a.active {
+  background-color: var(--clr-primary-hsl);
 }
 
 button {
+  display: block;
   border: 0;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-raduis);
   color: white;
-  background: var(--clr-primary);
+  background: var(--clr-primary-hsl);
   cursor: pointer;
 }
 
 section {
-  padding-block: 5rem;
+  padding-block: 3rem;
 }
 
 .main-title {
-  text-align: center;
-  font-weight: 600;
   font-size: 3rem;
-  text-decoration: 10px underline var(--clr-primary);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+
+  text-underline-offset: 1rem;
+  text-decoration: 2px underline var(--clr-primary-hsl);
 }
 
 /* navbar */
@@ -84,28 +95,76 @@ nav .container {
 nav .logo {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--clr-primary);
+  color: var(--clr-primary-hsl);
 }
 
 nav .links a {
   display: block;
   padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--clr-primary);
+  border-radius: var(--border-raduis);
+  border: var(--nav-links-border);
+}
 
-  &.active {
-    background-color: var(--clr-primary);
+/* about content */
+section.about-content p {
+  padding: 1rem;
+
+  & p:not(:last-child) {
+    margin-bottom: 1.5rem;
   }
 }
 
-/* page content */
-
-
 /* help layout */
+section.help-nav .help-options {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
 
+  & a {
+    font-size: 1.8rem;
+    flex-basis: 10rem;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    border: var(--nav-links-border);
+    border-radius: var(--border-raduis);
+  }
+}
+
+section.help-content h3 {
+  padding: 1rem;
+  font-size: 3rem;
+}
 
 /* faq */
+.help-content .faq .question {
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-raduis);
+  background-color: hsl(var(--clr-primary));
 
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  & p:first-of-type {
+    font-size: 2.5rem;
+    color: var(--clr-secondary-hsl);
+  }
+}
+
+/* contact */
+.help-content .contact label {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+
+
+  &+* {
+    margin-bottom: 2rem;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-raduis);
+  }
+}
 
 /* careers list */
 
