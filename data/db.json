@@ -42,5 +42,6 @@
       "salary": 30000,
       "location": "London, UK"
     }
-  ]
+  ],
+  "contacts": []
 }

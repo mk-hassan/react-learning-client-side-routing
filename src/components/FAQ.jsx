@@ -1,3 +1,5 @@
+import { useActionData } from "react-router-dom";
+
 export default function FAQ() {
   return (
     <div className="faq">

@@ -3,6 +3,15 @@ import { useLoaderData, useParams } from "react-router-dom"
 
 export default function CareerDetails() {
   const details = useLoaderData();
+  console.log(details);
+  // const params = useParams();
+  // const [details, setDetails] = useState({});
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:3000/careers/${params.careerId}`)
+  //     .then(res => res.json())
+  //     .then(data => setDetails(data));
+  // }, []);
 
   return (
     <div className="career-details">
