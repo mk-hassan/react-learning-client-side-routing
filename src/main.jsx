@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 
-import './index.css'
-
 // main component
 import App from './App.jsx'
 import Help from './pages/Help.jsx'
@@ -21,6 +19,9 @@ import CareersError from './components/CareersError.jsx'
 import submitContactForm from './actions/submitContactFormAction.js'
 import careersListLoader from './actions/careersListLoader.js'
 import careerDetailsLoader from './actions/careerDetailsLoader.js'
+
+// styling files
+import './index.css'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

@@ -1,8 +1,34 @@
-# React + Vite
+# Learning react-router-dom-v6.4
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> I walked through the lesssons provided in this [toturial series](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iVKmtNuCeIswnQ97in2GGf).
 
-Currently, two official plugins are available:
+## Prior react-router-dom-v6.4
+You only make use of `<BrowserRouter>` tag import from react-router-dom which is wrapping the main `<App />` component.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```javascript
+// main.jsx
+import { BrowserRouter } from 'react-router-dom'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+)
+```
+```javascript
+// App.js
+import { Routes, Route } from 'react-router-dom'
+
+export default function App() {
+  return (
+    <main>
+      <Routes>
+        <Route path="home" element={<Home />}>
+        <Route path="about" element={<About />}>
+      </Routes>
+    </main>
+  );
+}
+```
