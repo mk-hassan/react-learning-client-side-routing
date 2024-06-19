@@ -12,7 +12,10 @@ import About from './pages/About.jsx'
 import FAQ from './components/FAQ.jsx'
 import Contact from './components/Contact.jsx'
 import NotFound from './pages/NotFound.jsx'
-import Careers, { loadCareers } from './pages/Careers.jsx'
+import Careers from './pages/Careers.jsx'
+import CareersList, { loadCareers } from './components/CareersList.jsx'
+import CareerDetails, { detailsLoader } from './components/CareerDetails.jsx'
+import CareersError from './components/CareersError.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,11 +26,18 @@ const router = createBrowserRouter(
         <Route path='faq' element={<FAQ />} />
         <Route path='contact' element={<Contact />} />
       </Route>
-      <Route
-        path='careers'
-        element={<Careers />}
-        loader={loadCareers}
-      />
+      <Route path='careers' element={<Careers />} errorElement={<CareersError />}>
+        <Route
+          index
+          element={<CareersList />}
+          loader={loadCareers}
+        />
+        <Route
+          path=':careerId'
+          element={<CareerDetails />}
+          loader={detailsLoader}
+        />
+      </Route>
       <Route path='*' element={<NotFound />} />
     </Route>
   )

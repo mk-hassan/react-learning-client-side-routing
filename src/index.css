@@ -201,7 +201,12 @@ section.help-content h3 {
 }
 
 /* careers list */
-section.careers-contnet .career-card {
+section.careers-content h3 {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+section.careers-content .career-card {
   border-radius: var(--border-raduis);
   padding: 2rem;
   background-color: rgb(0 0 0 / 0.2);
@@ -210,21 +215,60 @@ section.careers-contnet .career-card {
     margin-bottom: 2rem;
   }
 
-  & h3 {
-    font-weight: 500;
-    font-size: 2rem;
-  }
-
   &:hover h3 {
     color: var(--clr-primary-hsl);
   }
 }
 
 /* careers details */
+.career-details {
+  border-radius: var(--border-raduis);
+  padding: 2rem;
+  background-color: rgb(0 0 0 / 0.2);
+  font-size: 1.8rem;
 
+  & h3 {
+    margin-bottom: 1.5rem;
+  }
+
+  & span {
+    color: var(--clr-primary-hsl);
+  }
+}
 
 /* breadcrumbs */
+.careers-error {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
+  & h3 {
+    font-size: 4rem;
+    color: var(--clr-primary-hsl);
+  }
+
+  & p {
+    font-size: 3rem;
+  }
+
+  & span {
+    text-decoration: underline;
+    color: var(--clr-primary-hsl);
+  }
+}
+
+/* location tracker */
+.bread-crumbs li:not(:last-child)::after {
+  content: ">";
+  margin-left: 1rem;
+  color: var(--clr-primary-hsl);
+}
+
+.bread-crumbs li a {
+  font-size: 1.8rem;
+}
 
 /* container */
 .container {
