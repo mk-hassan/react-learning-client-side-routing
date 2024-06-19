@@ -1,7 +1,8 @@
-import { Form, redirect, useActionData } from "react-router-dom";
+import { Form, useActionData } from "react-router-dom";
 
 export default function Contact() {
   const res = useActionData();
+  console.log(res);
 
   return (
     <div className="contact">
@@ -18,22 +19,4 @@ export default function Contact() {
       </Form>
     </div>
   );
-}
-
-export async function submitReview({ request }) {
-  const formData = await request.formData();
-
-  const submission = {
-    email: formData.get('email'),
-    message: formData.get('message')
-  };
-
-  let res = await fetch('http://localhost:3000/contacts', {
-    method: 'POST',
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(submission),
-  });
-  return await res.json();
 }

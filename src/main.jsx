@@ -10,12 +10,17 @@ import Help from './pages/Help.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import FAQ from './components/FAQ.jsx'
-import Contact, { submitReview } from './components/Contact.jsx'
+import Contact from './components/Contact.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Careers from './pages/Careers.jsx'
-import CareersList, { loadCareers } from './components/CareersList.jsx'
-import CareerDetails, { detailsLoader } from './components/CareerDetails.jsx'
+import CareersList from './components/CareersList.jsx'
+import CareerDetails from './components/CareerDetails.jsx'
 import CareersError from './components/CareersError.jsx'
+
+// actions & loaders
+import submitContactForm from './actions/submitContactFormAction.js'
+import careersListLoader from './actions/careersListLoader.js'
+import careerDetailsLoader from './actions/careerDetailsLoader.js'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,18 +29,18 @@ const router = createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='help' element={<Help />}>
         <Route path='faq' element={<FAQ />} />
-        <Route path='contact' element={<Contact />} action={submitReview} />
+        <Route path='contact' element={<Contact />} action={submitContactForm} />
       </Route>
       <Route path='careers' element={<Careers />} errorElement={<CareersError />}>
         <Route
           index
           element={<CareersList />}
-          loader={loadCareers}
+          loader={careersListLoader}
         />
         <Route
           path=':careerId'
           element={<CareerDetails />}
-          loader={detailsLoader}
+          loader={careerDetailsLoader}
         />
       </Route>
       <Route path='*' element={<NotFound />} />
