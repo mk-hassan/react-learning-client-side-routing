@@ -3,8 +3,6 @@ import { useRouteError, Link } from "react-router-dom"
 export default function CareersError() {
   const error = useRouteError();
 
-  console.log(error);
-
   return (
     <div className="careers-error">
       <h3>{error.message}</h3>
