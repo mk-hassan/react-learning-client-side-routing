@@ -359,8 +359,6 @@ export default async function submitContactForm({ request }) {
 }
 ```
 
-> [!CAUTION]
-> Action function must return something. Usually it may return the response returned from the server, make use of redirect(url) mehod which returns an object used to redirect the user to anoter page, or return an error object.
 
 > [!TIP]
 > redirect(url) is just a shortcut for 
@@ -373,10 +371,13 @@ export default async function submitContactForm({ request }) {
 >}); 
 >```
 
-### 5. Loaders & Actions
+### 5. Loaders & Actions Notes
 
 > [!TIP]
 > Route actions are the "writes" to route loader "reads". 
+
+> [!CAUTION]
+> Actions and Loaders must return something. Usually it may return the response returned from the server, make use of redirect(url) mehod which returns an object used to redirect the user to anoter page, or return an error object.
 
 > [!TIP]
 > Loaders and Actions can resolve promises. In previous examples `careers.json()` and `details.json()` are resolved and return the data to the corresponding component.
