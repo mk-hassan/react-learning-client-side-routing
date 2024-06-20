@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function LocationTracker() {
   const location = useLocation();
+  console.log(location);
 
   let pathBuilder = '';
 

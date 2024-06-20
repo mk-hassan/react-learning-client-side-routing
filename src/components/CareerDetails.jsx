@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom"
 
 export default function CareerDetails() {
   const details = useLoaderData();
-  console.log(details);
+
   // const params = useParams();
   // const [details, setDetails] = useState({});
 

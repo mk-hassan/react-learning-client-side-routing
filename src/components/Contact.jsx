@@ -2,12 +2,10 @@ import { Form, useActionData } from "react-router-dom";
 
 export default function Contact() {
   const res = useActionData();
-  console.log(res);
 
   return (
     <div className="contact">
       <h3>Contact Us</h3>
-      <h2>{res && res.id}</h2>
       <Form method="POST">
         <label htmlFor="email">Email</label>
         <input type="email" name="email" id="email" placeholder="Enter email" />
